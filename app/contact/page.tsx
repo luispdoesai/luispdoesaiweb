@@ -1,19 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { InlineWidget } from 'react-calendly';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const heroRef = useRef<HTMLHeadingElement>(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
 
   useEffect(() => {
     if (heroRef.current) {
@@ -61,19 +56,6 @@ export default function Contact() {
     };
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:hello@luispdoesai.com?subject=Inquiry from ${formData.name} (${formData.company})&body=${encodeURIComponent(formData.message)}%0D%0A%0D%0AFrom: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}`;
-    window.location.href = mailtoLink;
-  };
-
   return (
     <main className="relative w-full overflow-x-hidden">
       {/* PAGE HERO */}
@@ -115,12 +97,12 @@ export default function Contact() {
               <div>
                 <h3 className="text-sm uppercase tracking-wider font-semibold mb-4 text-brand-muted-gray">Book a Free Call</h3>
                 <a 
-                  href="https://calendly.com/luispadilla" 
+                  href="https://calendly.com/luispdoesai/new-meeting" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-2xl font-playfair border-b border-brand-black pb-1 hover:opacity-60 transition-opacity text-brand-black"
                 >
-                  calendly.com/luispadilla
+                  calendly.com/luispdoesai/new-meeting
                 </a>
               </div>
               
@@ -136,68 +118,12 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right: Form */}
-          <div className="reveal">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm uppercase tracking-wider font-semibold text-brand-muted-gray">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-transparent border-b border-brand-black/20 py-4 outline-none focus:border-brand-black transition-colors text-lg"
-                />
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm uppercase tracking-wider font-semibold text-brand-muted-gray">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-transparent border-b border-brand-black/20 py-4 outline-none focus:border-brand-black transition-colors text-lg"
-                />
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label htmlFor="company" className="text-sm uppercase tracking-wider font-semibold text-brand-muted-gray">Company</label>
-                <input 
-                  type="text" 
-                  id="company" 
-                  name="company" 
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="bg-transparent border-b border-brand-black/20 py-4 outline-none focus:border-brand-black transition-colors text-lg"
-                />
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm uppercase tracking-wider font-semibold text-brand-muted-gray">Message</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Tell us about your business and the manual tasks taking up your team's time..." 
-                  rows={4}
-                  className="bg-transparent border-b border-brand-black/20 py-4 outline-none focus:border-brand-black transition-colors text-lg resize-none placeholder:text-brand-black/30"
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit" 
-                className="self-start bg-brand-black text-brand-white px-10 py-5 text-sm uppercase tracking-wider font-medium border border-brand-black transition-colors hover:bg-transparent hover:text-brand-black mt-4"
-              >
-                Send Message
-              </button>
-            </form>
+          {/* Right: Calendly */}
+          <div className="reveal w-full min-h-[700px]">
+            <InlineWidget 
+              url="https://calendly.com/luispdoesai/new-meeting" 
+              styles={{ height: '700px' }} 
+            />
           </div>
           
         </div>
