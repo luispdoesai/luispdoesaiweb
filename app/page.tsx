@@ -342,6 +342,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INFRASTRUCTURE SECTION */}
+      <section className="py-[120px] px-5 md:px-[5%] bg-[#0a0a0a] text-white relative z-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-16 text-gray-400 after:content-[''] after:block after:w-10 after:h-px after:bg-gray-400">
+            THE MODEL
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="reveal font-playfair text-[clamp(2.5rem,4vw,4rem)] leading-[1.1] mb-8">
+                This Is Not a One-Time Build.
+              </h2>
+            </div>
+            <div className="reveal">
+              <p className="font-dm text-gray-300 text-lg leading-relaxed mb-8">
+                Most agencies hand you a chatbot and disappear. We deploy an AI infrastructure that runs your front office, your back office, and your team&apos;s daily operations. It starts on day one with your highest-ROI opportunity. It grows every month after that.
+              </p>
+              <p className="font-dm text-white text-lg leading-relaxed font-medium">
+                Your competitors are getting chatbots. Your business gets the whole system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* UNDER THE HOOD SECTION */}
       <section className="py-[120px] px-5 md:px-[5%] bg-[#111111] text-white relative z-10">
         <div className="max-w-[1400px] mx-auto">
@@ -349,11 +373,10 @@ export default function Home() {
             WHAT CHANGES
           </div>
           <h2 className="reveal font-playfair text-[clamp(2.5rem,4vw,4rem)] leading-[1.1] mb-6">
-            Three Outcomes. One Decision.
+            One Infrastructure. Activated in Layers.
           </h2>
           <p className="reveal font-dm text-gray-400 text-lg leading-relaxed max-w-[700px] mb-20">
-            No jargon. No black boxes. Here is exactly what happens
-            inside the systems we build for your business.
+            Your AI infrastructure starts with what moves the needle fastest, then expands as your business grows. Every layer connects. Every layer compounds.
           </p>
           <div className="flex flex-col gap-0">
             {[
