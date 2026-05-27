@@ -144,35 +144,35 @@ export default function About() {
       <section className="py-[120px] px-5 md:px-[5%] bg-brand-white text-brand-black relative z-10">
         <div className="max-w-[1400px] mx-auto">
           <div className="reveal text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-16 text-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
-            OUR STACK
+            OUR INFRASTRUCTURE
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="reveal">
-              <h3 className="text-2xl font-playfair mb-8 border-b border-brand-black/10 pb-4">Automation & Agents</h3>
+              <h3 className="text-2xl font-playfair mb-8 border-b border-brand-black/10 pb-4">Agents & Automation</h3>
               <ul className="flex flex-col gap-4 text-lg text-brand-mid-gray">
-                <li>Make.com</li>
-                <li>n8n</li>
-                <li>Python</li>
-                <li>Node.js</li>
-                <li>LangChain</li>
-                <li>CrewAI</li>
-                <li>Claude API</li>
-                <li>OpenAI API</li>
+                <li>Workflow Orchestration</li>
+                <li>Multi-Agent Systems</li>
+                <li>Large Language Models</li>
+                <li>Custom AI Agents</li>
+                <li>Process Automation</li>
+                <li>Intelligent Routing</li>
+                <li>Real-Time Triggers</li>
+                <li>Autonomous Task Execution</li>
               </ul>
             </div>
-            
+
             <div className="reveal">
-              <h3 className="text-2xl font-playfair mb-8 border-b border-brand-black/10 pb-4">Integrations & Infrastructure</h3>
+              <h3 className="text-2xl font-playfair mb-8 border-b border-brand-black/10 pb-4">Integrations & Data</h3>
               <ul className="flex flex-col gap-4 text-lg text-brand-mid-gray">
-                <li>HubSpot</li>
-                <li>Salesforce</li>
-                <li>Notion</li>
-                <li>Slack</li>
-                <li>Supabase</li>
-                <li>Pinecone</li>
-                <li>AWS</li>
-                <li>Zapier</li>
+                <li>CRM & Sales Platforms</li>
+                <li>Communication Tools</li>
+                <li>Knowledge Bases & Memory</li>
+                <li>Cloud Infrastructure</li>
+                <li>Vector Search & Retrieval</li>
+                <li>Productivity Suites</li>
+                <li>Webhooks & APIs</li>
+                <li>Custom Data Pipelines</li>
               </ul>
             </div>
           </div>
