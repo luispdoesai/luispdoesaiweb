@@ -182,12 +182,6 @@ export default function Home() {
             See What We Build →
           </Link>
         </div>
-        <div className="reveal mt-8 inline-flex items-start gap-3 bg-black/60 backdrop-blur-md border border-brand-white/30 px-5 py-4 w-fit max-w-xl">
-          <span className="text-brand-white mt-0.5">■</span>
-          <p className="font-dm text-sm leading-[1.6] text-brand-white">
-            <span className="uppercase tracking-[0.1em] font-medium">Live in 14 days or you don&apos;t pay.</span> We build a working AI system in your environment. If it&apos;s not live and running in two weeks, you owe nothing.
-          </p>
-        </div>
         <div 
           ref={scrollIndicatorRef}
           className="absolute bottom-10 left-[5%] w-px h-[60px] bg-brand-white/20 overflow-hidden"
