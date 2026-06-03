@@ -480,7 +480,7 @@ export default function Home() {
             Investment
           </div>
           <p className="font-dm text-brand-white text-[clamp(1.1rem,2.2vw,1.6rem)] leading-[1.6] max-w-[800px] mx-auto">
-            Engagements start at <span className="font-playfair">[INSERT YOUR NUMBER]</span> — most clients recover it within the first few weeks of saved time.
+            Engagements start at <span className="font-playfair">$5,000</span> — most clients recover it within the first few weeks of saved time.
           </p>
         </div>
       </section>
