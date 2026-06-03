@@ -93,7 +93,27 @@ export default function Contact() {
               </p>
             </div>
 
+            <div className="flex items-start gap-3 border border-brand-black/20 bg-brand-black text-brand-white px-5 py-4 max-w-xl mb-12">
+              <span className="text-brand-white mt-0.5">■</span>
+              <p className="font-dm text-sm leading-[1.6] text-brand-white">
+                <span className="uppercase tracking-[0.1em] font-medium">Live in 14 days or you don&apos;t pay.</span> We build a working AI system in your environment. If it&apos;s not live and running in two weeks, you owe nothing.
+              </p>
+            </div>
+
             <div className="flex flex-col gap-8 mt-12">
+              <div>
+                <h3 className="text-sm uppercase tracking-wider font-semibold mb-4 text-brand-muted-gray">Not Ready for a Call?</h3>
+                <a
+                  href="mailto:luispdoesai@gmail.com?subject=Free%20Automation%20Audit&body=Hi%20Luis%2C%20I%27d%20like%20a%20free%20automation%20audit.%20Here%27s%20a%20bit%20about%20my%20business%3A"
+                  className="inline-block border border-brand-black px-6 py-4 text-sm uppercase tracking-wider font-medium text-brand-black transition-colors hover:bg-brand-black hover:text-brand-white"
+                >
+                  Get your free automation audit →
+                </a>
+                <p className="font-dm text-sm text-brand-muted-gray mt-3 max-w-md leading-[1.6]">
+                  We&apos;ll map your 3 biggest automation leaks — no call required.
+                </p>
+              </div>
+
               <div>
                 <h3 className="text-sm uppercase tracking-wider font-semibold mb-4 text-brand-muted-gray">Book a Free Call</h3>
                 <a

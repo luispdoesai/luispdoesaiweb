@@ -175,12 +175,18 @@ export default function Home() {
           >
             Get Your Business Running on AI
           </Link>
-          <Link 
-            href="/results" 
+          <Link
+            href="/results"
             className="inline-block text-sm uppercase tracking-wider border-b border-brand-white pb-1 transition-opacity hover:opacity-60"
           >
             See What We Build →
           </Link>
+        </div>
+        <div className="reveal mt-8 inline-flex items-start gap-3 bg-black/60 backdrop-blur-md border border-brand-white/30 px-5 py-4 w-fit max-w-xl">
+          <span className="text-brand-white mt-0.5">■</span>
+          <p className="font-dm text-sm leading-[1.6] text-brand-white">
+            <span className="uppercase tracking-[0.1em] font-medium">Live in 14 days or you don&apos;t pay.</span> We build a working AI system in your environment. If it&apos;s not live and running in two weeks, you owe nothing.
+          </p>
         </div>
         <div 
           ref={scrollIndicatorRef}
@@ -239,6 +245,11 @@ export default function Home() {
                   num: '05',
                   title: "We've Built AI Products Ourselves",
                   desc: "We don't just implement AI for others — we've built and shipped our own AI products. When we say we know how this works, we mean it from every angle."
+                },
+                {
+                  num: '06',
+                  title: 'Auditable AI, Not a Black Box',
+                  desc: 'Every action your AI takes follows a written rule you can inspect and change. No hallucinated answers, no surprises — you see exactly why it did what it did.'
                 }
               ].map((reason) => (
                 <div key={reason.num} className="why-reason-block relative pt-6 opacity-0 translate-x-12">
@@ -370,30 +381,33 @@ export default function Home() {
       <section className="py-[120px] px-5 md:px-[5%] bg-[#111111] text-white relative z-10">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-16 text-gray-400 after:content-[''] after:block after:w-10 after:h-px after:bg-gray-400">
-            WHAT CHANGES
+            WHERE IT HURTS
           </div>
           <h2 className="reveal font-playfair text-[clamp(2.5rem,4vw,4rem)] leading-[1.1] mb-6">
-            One Infrastructure. Activated in Layers.
+            Pick the one costing you the most.
           </h2>
           <p className="reveal font-dm text-gray-400 text-lg leading-relaxed max-w-[700px] mb-20">
-            Your AI infrastructure starts with what moves the needle fastest, then expands as your business grows. Every layer connects. Every layer compounds.
+            Three problems bleed most businesses. Find the one bleeding yours, and start there. Every layer connects. Every layer compounds.
           </p>
           <div className="flex flex-col gap-0">
             {[
               {
-                title: 'Your Pipeline Fills Itself',
+                problem: 'Leads slipping through the cracks',
+                outcome: 'Pipeline that fills itself',
                 tag: '01',
                 how: 'Every lead gets a personal response in under 60 seconds — day or night. They get scored, your CRM gets updated, and follow-ups go out automatically until they book. Your team only talks to people ready to buy.',
                 example: 'A new lead fills out your contact form. Within 30 seconds they receive a personalized email that references their specific inquiry, books them into your calendar, and creates a CRM record with notes. Your team sees a fully populated lead — ready to close — without touching anything.'
               },
               {
-                title: 'Your Team Gets Answers Instantly',
+                problem: 'Your team answering the same questions all day',
+                outcome: 'Internal AI assistant',
                 tag: '02',
                 how: 'Stop losing hours to repetitive questions, manual research, and information buried in documents. Your AI assistant knows everything about your business and answers correctly — every time, in seconds.',
                 example: 'An employee asks your internal AI assistant: "What is our refund policy for enterprise clients?" The system searches your policy documents, finds the relevant clause, and responds with the exact answer in plain English — in under 3 seconds.'
               },
               {
-                title: 'Your Manual Work Disappears',
+                problem: 'Manual work you do 3+ times a week',
+                outcome: 'Workflow automation',
                 tag: '03',
                 how: 'Data entry, follow-ups, reporting, booking, notifications — if your team does it the same way more than three times a week, it runs automatically from now on. Hours back. Every week. Forever.',
                 example: 'A sales agent receives a list of 50 target companies. For each one it searches the web for recent news, finds the decision maker on LinkedIn, identifies a relevant pain point, writes a personalized outreach message, and adds it to your CRM — all without human involvement. What would take a sales rep two full days takes the agent 90 minutes.'
@@ -402,7 +416,8 @@ export default function Home() {
               <div key={i} className="reveal border-t border-white/10 py-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
                 <div className="lg:col-span-3">
                   <div className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-3">{item.tag}</div>
-                  <h3 className="font-playfair text-3xl mb-6">{item.title}</h3>
+                  <h3 className="font-playfair text-3xl mb-4">{item.problem}</h3>
+                  <div className="font-dm text-sm uppercase tracking-[0.15em] text-brand-white/80">→ {item.outcome}</div>
                 </div>
                 <div className="lg:col-span-5">
                   <div className="text-xs uppercase tracking-[0.15em] text-gray-500 mb-4">How It Works</div>
@@ -455,6 +470,18 @@ export default function Home() {
               — Luis Padilla, Founder, LuisPDoesAI
             </cite>
           </div>
+        </div>
+      </section>
+
+      {/* PRICING ANCHOR */}
+      <section className="py-20 px-5 md:px-[5%] bg-brand-black border-y border-white/10 relative z-10">
+        <div className="max-w-[1400px] mx-auto reveal text-center">
+          <div className="text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-4 mb-8 text-brand-muted-gray before:content-[''] before:block before:w-10 before:h-px before:bg-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
+            Investment
+          </div>
+          <p className="font-dm text-brand-white text-[clamp(1.1rem,2.2vw,1.6rem)] leading-[1.6] max-w-[800px] mx-auto">
+            Engagements start at <span className="font-playfair">[INSERT YOUR NUMBER]</span> — most clients recover it within the first few weeks of saved time.
+          </p>
         </div>
       </section>
 
