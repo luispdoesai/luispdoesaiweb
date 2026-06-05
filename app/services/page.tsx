@@ -15,7 +15,7 @@ export default function Services() {
     if (heroRef.current) {
       const words = heroRef.current.innerText.split(' ');
       heroRef.current.innerHTML = '';
-      
+
       words.forEach((word) => {
         const span = document.createElement('span');
         span.innerHTML = word + '&nbsp;';
@@ -36,7 +36,7 @@ export default function Services() {
     }
 
     gsap.utils.toArray('.reveal').forEach((element: any) => {
-      gsap.fromTo(element, 
+      gsap.fromTo(element,
         { opacity: 0, y: 40 },
         {
           opacity: 1,
@@ -57,26 +57,58 @@ export default function Services() {
     };
   }, []);
 
+  const stackLayers = [
+    {
+      num: '01',
+      title: 'Core System',
+      description: 'The AI backbone of your operation. It handles inbound leads, answers internal questions, processes data, and runs workflows — all from a single layer your team never has to manage.'
+    },
+    {
+      num: '02',
+      title: 'Integration Layer',
+      description: 'Your stack stays intact. We connect the core to the tools you already use — HubSpot, Salesforce, Slack, Gmail, Notion, or anything with an API. No migrations. No new software to learn.'
+    },
+    {
+      num: '03',
+      title: 'Business Brain',
+      description: 'We train the system on your documents, your SOPs, your voice, your rules. It knows your business. Answers come from your data, not generic AI knowledge. It stays current as your business grows.'
+    },
+    {
+      num: '04',
+      title: 'Reporting',
+      description: 'Every month you see exactly what the system did — leads engaged, questions answered, hours recovered, tasks completed. You know the ROI. No black box.'
+    },
+    {
+      num: '05',
+      title: 'Managed Hosting',
+      description: 'We run the infrastructure. We handle updates, monitor performance, and fix issues before they reach you. Your team sees results. They never touch a server.'
+    }
+  ];
+
   const faqs = [
     {
-      q: "How long does it take to see results?",
-      a: "Most clients see the system working within the first 48 hours after go-live. The lead response system starts engaging leads immediately. The knowledge assistant starts answering questions the same day. Automations run from the moment they are deployed."
+      q: "How long does it take to go live?",
+      a: "14 days. That is the guarantee. If your system is not live and working in 14 days, the build is free. We have built this architecture enough times that we know exactly what it takes."
     },
     {
       q: "Do we need to change our existing tools?",
-      a: "No. We build on top of what you already use. HubSpot, Salesforce, Notion, Slack, Google Workspace, or any platform with an API — we connect to it, we do not replace it."
+      a: "No. We build on top of what you already use — HubSpot, Salesforce, Notion, Slack, Google Workspace, or any platform with an API. We connect to it. We do not replace it."
     },
     {
-      q: "What if our business has unique requirements?",
-      a: "Every system we deploy is configured for your business — your prompts, your data, your voice, your tools. The underlying architecture is proven. We handle the configuration and stay by your side to tweak it as you grow."
+      q: "What does the ongoing subscription cover?",
+      a: "Everything. Managed hosting, monitoring, updates, system improvements, and direct access to us. Your infrastructure runs. When something needs adjusting, we adjust it. You do not manage any of it."
     },
     {
       q: "How involved does our team need to be?",
-      a: "Minimally. We need about 60 minutes of your time upfront and access to your tools. We handle the rest and give you a full walkthrough before we hand anything over."
+      a: "About 60 minutes upfront, plus access to your tools. We handle the rest. We give you a full walkthrough before go-live and stay connected after."
     },
     {
-      q: "What happens after go-live?",
-      a: "Two weeks of active monitoring are included. After that we review the results together and decide what to build next. You are never locked into anything."
+      q: "What is the free automation audit?",
+      a: "A working session where we map where your team is losing time. We look at your workflows, find the highest-value opportunities, and tell you exactly what we would build and what it would cost. No obligation. No deposit. You leave with a clear picture either way."
+    },
+    {
+      q: "Is this a project or an ongoing service?",
+      a: "Ongoing. You subscribe to have AI infrastructure running inside your business — built, maintained, and improved by us. There is no handoff where you are on your own. We are connected to your account and responsible for results."
     }
   ];
 
@@ -85,145 +117,99 @@ export default function Services() {
       {/* PAGE HERO */}
       <section className="min-h-[60vh] flex flex-col justify-center px-5 md:px-[5%] pt-24 bg-transparent relative z-10">
         <div className="text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-8 text-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
-          WHAT YOU GET
+          YOUR AI OPERATING LAYER
         </div>
         <h1 ref={heroRef} className="text-[clamp(4rem,8vw,7rem)] tracking-tighter leading-[0.9] mb-8">
-          Three Problems Solved.
+          Infrastructure That Runs Your Business.
         </h1>
         <p className="reveal text-[clamp(1rem,1.5vw,1.2rem)] uppercase tracking-[0.1em] text-brand-muted-gray max-w-2xl">
-          Most businesses have the same problems. Slow lead response. Information buried in documents. Hours lost to manual work. We have a proven system for each one. Pick yours.
+          We build and run a full AI stack for your business. One layer handles lead response, internal knowledge, workflow automation, and reporting — maintained by us, on a monthly subscription.
         </p>
       </section>
 
-      {/* SERVICE DETAIL — AI Automations */}
+      {/* WHAT IT DOES */}
       <section className="py-[120px] px-5 md:px-[5%] bg-brand-white text-brand-black relative z-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4 reveal">
-            <div className="text-[8rem] leading-none font-playfair text-brand-black/10">01</div>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="reveal text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-16 text-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
+            WHAT YOUR BUSINESS GETS
           </div>
-          <div className="lg:col-span-8 reveal">
-            <h2 className="text-[clamp(2.5rem,4vw,4rem)] font-playfair mb-6">Your Leads Never Wait Again</h2>
-            <p className="text-xl text-brand-mid-gray mb-10 leading-relaxed">
-              Right now, when a lead comes in, how long does it take your team to respond? If the answer is anything more than two minutes, you are losing deals you never knew you had.<br /><br />We build an AI system that responds to every new lead in under 60 seconds — personalized to their specific inquiry, in your voice, at any hour. It scores them, fills your CRM, and starts a follow-up sequence automatically. Your sales team wakes up to a qualified pipeline, not a list of leads to chase.<br /><br />The businesses winning right now are not the ones with the biggest teams. They are the ones that respond first.
-            </p>
-            <div className="mb-10">
-              <h4 className="text-sm uppercase tracking-wider font-semibold mb-5">What&apos;s included:</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  'Every lead gets a personal response in under 60 seconds',
-                  'Automatic scoring so your best leads rise to the top',
-                  'CRM populated with zero manual data entry',
-                  'Follow-up sequences that run until they respond or book',
-                  'You see exactly how many leads the system engaged each month'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-brand-mid-gray">
-                    <span className="mt-1 text-xs">■</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-              <div className="text-sm uppercase tracking-wider font-semibold">Starting from: $2,500</div>
-              <Link href="/contact" className="inline-block text-sm uppercase tracking-wider border-b border-brand-black pb-1 transition-opacity hover:opacity-60">
-                Get Started →
-              </Link>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl">
+            {[
+              { outcome: 'Leads responded to in under 60 seconds', detail: 'Every inquiry gets a personalized reply in your voice, at any hour, with your CRM updated automatically.' },
+              { outcome: 'Internal questions answered without escalation', detail: 'Your team gets accurate answers from your own documents in plain English — no searching, no waiting, no guessing.' },
+              { outcome: 'Repetitive work eliminated', detail: 'Data entry, scheduling, follow-ups, reporting — any task that runs on a pattern gets removed from your team&apos;s plate.' },
+              { outcome: 'A monthly report showing exactly what ran', detail: 'Hours recovered. Leads engaged. Tasks completed. You see the output every month in plain numbers.' }
+            ].map((item, i) => (
+              <div key={i} className="reveal border-t border-brand-black/10 pt-8">
+                <p className="text-xl font-playfair mb-3">{item.outcome}</p>
+                <p className="text-brand-mid-gray leading-relaxed" dangerouslySetInnerHTML={{ __html: item.detail }} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SERVICE DETAIL — Agentic Systems */}
-      <section className="py-[120px] px-5 md:px-[5%] bg-brand-near-black relative z-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4 reveal">
-            <div className="text-[8rem] leading-none font-playfair text-brand-white/10">02</div>
-          </div>
-          <div className="lg:col-span-8 reveal">
-            <h2 className="text-[clamp(2.5rem,4vw,4rem)] font-playfair mb-6">Your Team Stops Searching. Starts Knowing.</h2>
-            <p className="text-xl text-brand-muted-gray mb-10 leading-relaxed">
-              The average employee spends nearly two hours a day searching for information. Documents buried in folders. Policies no one can find. Questions that get escalated to managers who have better things to do.<br /><br />We build an AI assistant trained on everything your business knows — contracts, SOPs, policies, product data, anything in your documents. Your team asks questions in plain English and gets accurate answers instantly, pulled directly from your own knowledge base. No guessing. No digging. No waiting.<br /><br />New employees ramp up in days. Your experienced team gets answers in seconds. Your managers stop answering the same questions twice.
-            </p>
-            <div className="mb-10">
-              <h4 className="text-sm uppercase tracking-wider font-semibold mb-5">What&apos;s included:</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  'Plain English questions answered from your actual documents',
-                  'Deployed where your team already works — Slack, your website, or internal tools',
-                  'Answers sourced only from your documents — never makes things up',
-                  'New documents added automatically as your business grows',
-                  'Monthly report showing questions answered and hours saved'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-brand-muted-gray">
-                    <span className="mt-1 text-xs text-brand-white">■</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-              <div className="text-sm uppercase tracking-wider font-semibold">Starting from: $15,000</div>
-              <Link href="/contact" className="inline-block text-sm uppercase tracking-wider border-b border-brand-white pb-1 transition-opacity hover:opacity-60">
-                Get Started →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICE DETAIL — Custom AI Builds */}
-      <section className="py-[120px] px-5 md:px-[5%] bg-brand-white text-brand-black relative z-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4 reveal">
-            <div className="text-[8rem] leading-none font-playfair text-brand-black/10">03</div>
-          </div>
-          <div className="lg:col-span-8 reveal">
-            <h2 className="text-[clamp(2.5rem,4vw,4rem)] font-playfair mb-6">Your Team Does Less. Achieves More.</h2>
-            <p className="text-xl text-brand-mid-gray mb-10 leading-relaxed">
-              Take every task your team does that follows the same pattern — data entry, invoice processing, appointment booking, follow-ups, notifications, report generation. Every one of those is a tax on your most valuable resource: your people.<br /><br />We map your workflows, identify the highest-value automations, and deploy them in your existing tools. No new software to learn. No processes to change. Just the work that was taking hours — now taking seconds. Automatically.<br /><br />Your team stops being expensive administrators and starts being what you hired them to be.
-            </p>
-            <div className="mb-10">
-              <h4 className="text-sm uppercase tracking-wider font-semibold mb-5">What&apos;s included:</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  'Every repetitive task mapped and eliminated',
-                  'Works inside the tools you already use — HubSpot, Slack, Gmail, and more',
-                  'Built on our proven systems — configured and maintained by us for you',
-                  'Full documentation and team walkthrough on delivery',
-                  'Monthly report showing exactly how many hours were saved'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-brand-mid-gray">
-                    <span className="mt-1 text-xs">■</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-              <div className="text-sm uppercase tracking-wider font-semibold">Starting from: $8,000</div>
-              <Link href="/contact" className="inline-block text-sm uppercase tracking-wider border-b border-brand-black pb-1 transition-opacity hover:opacity-60">
-                Get Started →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* THE PROCESS SECTION */}
+      {/* THE STACK */}
       <section className="py-[120px] px-5 md:px-[5%] bg-brand-near-black relative z-10">
         <div className="max-w-[1400px] mx-auto">
           <div className="reveal text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-8 text-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
-            THE PROCESS
+            WHAT WE BUILD AND RUN
           </div>
-          <h2 className="reveal text-[clamp(2.5rem,4vw,4rem)] font-playfair mb-16">Simple. Fast. Yours.</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-3xl">
-            <div className="reveal text-xl text-brand-muted-gray leading-relaxed flex flex-col gap-8">
-              <p>Every system starts with a conversation where we identify exactly what is costing your business the most. From there, the build takes 10 to 14 days. We handle the configuration and stay by your side to keep it running.</p>
-              <p>Once it is live, a small monthly fee covers infrastructure and keeps us connected to your account. At 60 days we review the results together — that conversation shapes what we build next.</p>
-              <p>No custom scoping sessions. No proposals that go nowhere. No surprises.</p>
-              <Link href="/contact" className="inline-block text-brand-white border-b border-brand-white pb-1 w-fit uppercase tracking-wider text-sm hover:opacity-60 transition-opacity">
-                Start With a Free 15-Minute Call →
+          <h2 className="reveal text-[clamp(2.5rem,4vw,4rem)] font-playfair mb-16">The Full Stack.</h2>
+          <div className="flex flex-col gap-0 max-w-4xl">
+            {stackLayers.map((layer, i) => (
+              <div key={i} className="reveal border-t border-brand-white/10 py-10 grid grid-cols-12 gap-6">
+                <div className="col-span-2 md:col-span-1">
+                  <span className="text-brand-muted-gray font-playfair text-sm">{layer.num}</span>
+                </div>
+                <div className="col-span-10 md:col-span-3">
+                  <h3 className="text-lg font-semibold text-brand-white uppercase tracking-wide">{layer.title}</h3>
+                </div>
+                <div className="col-span-12 md:col-span-8">
+                  <p className="text-brand-muted-gray leading-relaxed">{layer.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="py-[120px] px-5 md:px-[5%] bg-brand-white text-brand-black relative z-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div>
+            <div className="reveal text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-8 text-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
+              HOW IT WORKS
+            </div>
+            <h2 className="reveal text-[clamp(2.5rem,4vw,4rem)] font-playfair mb-10">Built in 14 days. Running indefinitely.</h2>
+            <div className="reveal flex flex-col gap-8 text-lg text-brand-mid-gray leading-relaxed">
+              <p>We start with a free automation audit — a working session to find where your business is losing the most time. After that, we scope the build and tell you exactly what it costs.</p>
+              <p>Once you are in, the build takes 14 days. If it is not live in 14 days, you pay nothing for the build. That is the guarantee.</p>
+              <p>After go-live, you subscribe to have it maintained. We monitor, update, and improve it. Your team runs on it. You never manage infrastructure.</p>
+            </div>
+          </div>
+          <div className="reveal flex flex-col gap-6">
+            <div className="bg-brand-near-black text-brand-white p-10 flex flex-col gap-6">
+              <h3 className="text-xl font-playfair">The pricing model</h3>
+              <p className="text-brand-muted-gray leading-relaxed">There is a one-time build fee to deploy your system. The amount depends on the complexity of what we are building — we cover that in the audit.</p>
+              <p className="text-brand-muted-gray leading-relaxed">After go-live, a monthly subscription keeps everything running: hosting, maintenance, monitoring, and ongoing support from us.</p>
+              <p className="text-brand-muted-gray leading-relaxed">We discuss both on the call once we understand your situation. The audit is free. No deposit. No commitment.</p>
+              <Link href="/contact" className="inline-block text-brand-white border-b border-brand-white pb-1 w-fit uppercase tracking-wider text-sm hover:opacity-60 transition-opacity mt-4">
+                Book Your Free Audit →
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* GUARANTEE */}
+      <section className="py-[100px] px-5 md:px-[5%] bg-brand-near-black relative z-10">
+        <div className="max-w-[900px] mx-auto text-center reveal">
+          <p className="text-xs uppercase tracking-[0.3em] text-brand-muted-gray mb-6">THE GUARANTEE</p>
+          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-playfair text-brand-white mb-6">Live in 14 days or the build is free.</h2>
+          <p className="text-brand-muted-gray text-lg leading-relaxed max-w-2xl mx-auto">
+            We have built this system enough times that we can guarantee it. If your AI infrastructure is not live and running in 14 days from the start of the build, you do not pay for the build.
+          </p>
         </div>
       </section>
 
@@ -236,14 +222,14 @@ export default function Services() {
           <div className="flex flex-col border-t border-brand-black/10">
             {faqs.map((faq, i) => (
               <div key={i} className="reveal border-b border-brand-black/10">
-                <button 
+                <button
                   className="w-full py-8 flex justify-between items-center text-left focus:outline-none"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <span className="text-lg md:text-xl font-playfair pr-8">{faq.q}</span>
                   <span className="text-2xl font-light transition-transform duration-300" style={{ transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)' }}>+</span>
                 </button>
-                <div 
+                <div
                   className="overflow-hidden transition-all duration-300 ease-in-out"
                   style={{ maxHeight: openFaq === i ? '200px' : '0', opacity: openFaq === i ? 1 : 0 }}
                 >
@@ -252,6 +238,24 @@ export default function Services() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* BOTTOM CTA */}
+      <section className="py-[120px] px-5 md:px-[5%] bg-brand-near-black relative z-10">
+        <div className="max-w-[900px] mx-auto reveal">
+          <div className="text-xs uppercase tracking-[0.2em] flex items-center gap-4 mb-8 text-brand-muted-gray after:content-[''] after:block after:w-10 after:h-px after:bg-brand-muted-gray">
+            START HERE
+          </div>
+          <h2 className="text-[clamp(2.5rem,4vw,4rem)] font-playfair text-brand-white mb-8">
+            Find out exactly where your business is losing time.
+          </h2>
+          <p className="text-brand-muted-gray text-lg leading-relaxed mb-10 max-w-2xl">
+            The audit is a working session — not a sales call. We map your workflows, identify the highest-value opportunities, and tell you what we would build and what it would cost. You leave with a clear picture. No deposit. No obligation.
+          </p>
+          <Link href="/contact" className="inline-block text-brand-white border-b border-brand-white pb-1 uppercase tracking-wider text-sm hover:opacity-60 transition-opacity">
+            Book Your Free Automation Audit →
+          </Link>
         </div>
       </section>
     </main>
